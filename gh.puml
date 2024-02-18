@@ -1,0 +1,21 @@
+@startuml
+annotation java.lang.Override
+class Constantes.Constante
+class PacObject.AbstractCharacter
+class PacObject.PacGhost
+class Utilities.Direction
+class Utilities.State
+class Utilities.Utils
+class java.awt.Color
+class java.awt.Point
+class java.util.Random
+PacObject.PacGhost ..> java.lang.Override
+PacObject.PacGhost ..> Constantes.Constante
+PacObject.PacGhost --|> PacObject.AbstractCharacter
+PacObject.PacGhost ..> Utilities.Direction
+PacObject.PacGhost ..> Utilities.State
+PacObject.PacGhost ..> Utilities.Utils
+PacObject.PacGhost ..> java.awt.Color
+PacObject.PacGhost ..> java.awt.Point
+PacObject.PacGhost ..> java.util.Random
+@enduml

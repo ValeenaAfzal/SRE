@@ -1,0 +1,115 @@
+@startuml
+abstract class PacObject.AbstractCharacter
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class Constantes.Constante
+class Event.ArrowListener
+class Gui.Block
+class Gui.Drawer
+class Gui.Maze
+class Gui.Structure
+class Gui.Transformers
+class Gui.Transformers.Mapper
+class PacObject.PacGhost
+class PacObject.PacMan
+class Utilities.Utils
+class java.awt.BorderLayout
+class java.awt.Color
+class java.awt.Dimension
+class java.awt.Graphics
+class java.awt.Graphics2D
+class java.awt.Point
+class java.awt.Polygon
+class java.awt.event.KeyAdapter
+class java.awt.event.KeyEvent
+class java.awt.event.KeyListener
+class java.util.ArrayList
+class java.util.List
+class java.util.Random
+class javax.swing.JFrame
+class javax.swing.JLabel
+class javax.swing.JOptionPane
+class javax.swing.JPanel
+class pacman.App
+class pacman.PacmanGame
+enum Gui.Lines
+enum Utilities.Direction
+enum Utilities.State
+PacObject.AbstractCharacter ..> Constantes.Constante
+PacObject.AbstractCharacter ..> Utilities.Utils
+PacObject.AbstractCharacter ..> java.awt.Color
+PacObject.AbstractCharacter ..> java.awt.Point
+PacObject.AbstractCharacter ..> java.util.ArrayList
+PacObject.AbstractCharacter ..> java.util.List
+PacObject.AbstractCharacter ..> Utilities.Direction
+PacObject.AbstractCharacter ..> Utilities.State
+Constantes.Constante ..> Utilities.Utils
+Constantes.Constante ..> java.awt.Color
+Constantes.Constante ..> java.awt.Dimension
+Constantes.Constante ..> java.awt.Point
+Gui.Block ..> java.awt.Color
+Gui.Block ..> java.awt.Point
+Gui.Drawer ..> java.lang.Override
+Gui.Drawer ..> java.lang.SuppressWarnings
+Gui.Drawer ..> Constantes.Constante
+Gui.Drawer ..> PacObject.PacMan
+Gui.Drawer ..> java.awt.Color
+Gui.Drawer ..> java.awt.Graphics
+Gui.Drawer ..> java.awt.Graphics2D
+Gui.Drawer ..> java.awt.Point
+Gui.Drawer ..> java.awt.Polygon
+Gui.Drawer --|> javax.swing.JPanel
+Gui.Drawer ..> Utilities.Direction
+Gui.Maze ..> Constantes.Constante
+Gui.Maze ..> PacObject.PacGhost
+Gui.Maze ..> PacObject.PacMan
+Gui.Maze ..> Utilities.Utils
+Gui.Maze ..> java.awt.BorderLayout
+Gui.Maze ..> java.awt.Dimension
+Gui.Maze ..> java.awt.event.KeyListener
+Gui.Maze ..> javax.swing.JFrame
+Gui.Maze ..> javax.swing.JLabel
+Gui.Maze ..> javax.swing.JPanel
+Gui.Structure ..> Constantes.Constante
+Gui.Structure ..> Gui.Transformers.Mapper
+Gui.Structure ..> java.awt.Color
+Gui.Structure ..> java.awt.Graphics
+Gui.Structure ..> java.awt.Point
+Gui.Structure ..> java.util.ArrayList
+Gui.Structure ..> java.util.List
+Gui.Transformers ..> java.util.ArrayList
+Gui.Transformers ..> java.util.List
+PacObject.PacGhost --|> PacObject.AbstractCharacter
+PacObject.PacGhost ..> java.lang.Override
+PacObject.PacGhost ..> Constantes.Constante
+PacObject.PacGhost ..> Utilities.Utils
+PacObject.PacGhost ..> java.awt.Color
+PacObject.PacGhost ..> java.awt.Point
+PacObject.PacGhost ..> java.util.Random
+PacObject.PacGhost ..> Utilities.Direction
+PacObject.PacGhost ..> Utilities.State
+PacObject.PacMan --|> PacObject.AbstractCharacter
+PacObject.PacMan ..> java.lang.Override
+PacObject.PacMan ..> Constantes.Constante
+PacObject.PacMan ..> Utilities.Utils
+PacObject.PacMan ..> java.awt.Color
+PacObject.PacMan ..> java.awt.Point
+PacObject.PacMan ..> java.awt.event.KeyEvent
+PacObject.PacMan ..> Utilities.Direction
+PacObject.PacMan ..> Utilities.State
+Utilities.Utils ..> Constantes.Constante
+Utilities.Utils ..> java.awt.Dimension
+Utilities.Utils ..> java.awt.Point
+pacman.PacmanGame ..> java.lang.Override
+pacman.PacmanGame ..> Constantes.Constante
+pacman.PacmanGame ..> Gui.Maze
+pacman.PacmanGame ..> PacObject.PacGhost
+pacman.PacmanGame ..> PacObject.PacMan
+pacman.PacmanGame ..> Utilities.Utils
+pacman.PacmanGame ..> java.awt.event.KeyAdapter
+pacman.PacmanGame ..> java.awt.event.KeyEvent
+pacman.PacmanGame ..> java.awt.event.KeyListener
+pacman.PacmanGame ..> javax.swing.JOptionPane
+pacman.PacmanGame ..> Utilities.State
+Utilities.Direction ..> java.lang.Override
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+annotation java.lang.Override
+class Constantes.Constante
+class Gui.Maze
+class PacObject.PacGhost
+class PacObject.PacMan
+class Utilities.State
+class Utilities.Utils
+class java.awt.event.KeyAdapter
+class java.awt.event.KeyEvent
+class java.awt.event.KeyListener
+class javax.swing.JOptionPane
+class pacman.App
+class pacman.PacmanGame
+pacman.PacmanGame ..> java.lang.Override
+pacman.PacmanGame ..> Constantes.Constante
+pacman.PacmanGame ..> Gui.Maze
+pacman.PacmanGame ..> PacObject.PacGhost
+pacman.PacmanGame ..> PacObject.PacMan
+pacman.PacmanGame ..> Utilities.State
+pacman.PacmanGame ..> Utilities.Utils
+pacman.PacmanGame ..> java.awt.event.KeyAdapter
+pacman.PacmanGame ..> java.awt.event.KeyEvent
+pacman.PacmanGame ..> java.awt.event.KeyListener
+pacman.PacmanGame ..> javax.swing.JOptionPane
+@enduml
