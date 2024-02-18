@@ -1,7 +1,0 @@
-@startuml
-class Gui.Block
-class java.awt.Color
-class java.awt.Point
-Gui.Block ..> java.awt.Color
-Gui.Block ..> java.awt.Point
-@enduml

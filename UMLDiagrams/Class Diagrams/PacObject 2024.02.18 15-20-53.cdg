@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PacObject">
+  <ClassDiagramComponents>
+    <Class name="AbstractCharacter" package="PacObject" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="point" type="Point" visibility="protected"/>
+        <Field name="movement" type="Movement" visibility="protected"/>
+        <Field name="state" type="State" visibility="protected"/>
+        <Field name="velocity" type="int" visibility="protected"/>
+        <Field name="START" type="Point" visibility="protected"/>
+        <Field name="color" type="Color" visibility="protected"/>
+        <Field name="baseColor" type="Color" visibility="protected"/>
+        <Field name="unit" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="manage" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="Color" name="c"/>
+        </Method>
+        <Method name="getColor" returnType="Color" visibility="public"/>
+        <Method name="checkToChangeDirection" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="askToChangeDirection" returnType="void" visibility="public">
+          <Argument type="Direction" name="d"/>
+        </Method>
+        <Method name="checkBounds" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="collision" returnType="boolean" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="wraparound" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="getMatrixPosition" returnType="int[]" visibility="public"/>
+        <Method name="getPoint" returnType="Point" visibility="public"/>
+        <Method name="back2Start" returnType="void" visibility="public"/>
+        <Method name="getMovement" returnType="Movement" visibility="public"/>
+        <Method name="getState" returnType="State" visibility="public"/>
+        <Method name="setPoint" returnType="void" visibility="public">
+          <Argument type="Point" name="p"/>
+        </Method>
+        <Method name="setMovement" returnType="void" visibility="public">
+          <Argument type="Movement" name="m"/>
+        </Method>
+        <Method name="setState" returnType="void" visibility="public">
+          <Argument type="State" name="s"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PacGhost" package="PacObject" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="jailTime" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Point" name="p"/>
+          <Argument type="Color" name="bc"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setStart" returnType="void" visibility="public">
+          <Argument type="Point" name="p"/>
+        </Method>
+        <Method name="startJailTimeContDown" returnType="void" visibility="public"/>
+        <Method name="SendSignalToReleaseFromJail" returnType="void" visibility="public"/>
+        <Method name="getVelocity" returnType="int" visibility="public"/>
+        <Method name="slowdown" returnType="void" visibility="public"/>
+        <Method name="toNormal" returnType="void" visibility="public"/>
+        <Method name="manage" returnType="void" visibility="public"/>
+        <Method name="move" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="correctBadMove" returnType="void" visibility="public"/>
+        <Method name="correctPoint" returnType="Point" visibility="private">
+          <Argument type="int" name="index"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="back2Start" returnType="void" visibility="public"/>
+        <Method name="getRandomDirection" returnType="Direction" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PacMan" package="PacObject" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="life" type="int" visibility="private"/>
+        <Field name="bonus" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="manage" returnType="void" visibility="public"/>
+        <Method name="specialState" returnType="void" visibility="public">
+          <Argument type="State" name="s"/>
+        </Method>
+        <Method name="back2Start" returnType="void" visibility="public"/>
+        <Method name="addLife" returnType="void" visibility="public"/>
+        <Method name="loseLife" returnType="void" visibility="public"/>
+        <Method name="changeState" returnType="void" visibility="private">
+          <Argument type="State" name="s"/>
+        </Method>
+        <Method name="getLife" returnType="int" visibility="public"/>
+        <Method name="setLife" returnType="void" visibility="public">
+          <Argument type="int" name="life"/>
+        </Method>
+        <Method name="getKey" returnType="void" visibility="public">
+          <Argument type="int" name="key"/>
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="resetBonus" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="PacObject.PacMan" target="PacObject.AbstractCharacter"/>
+    <IsRelation name="is" source="PacObject.PacGhost" target="PacObject.AbstractCharacter"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

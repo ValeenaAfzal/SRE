@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Constantes">
+  <ClassDiagramComponents>
+    <Class name="Constante" package="Constantes" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="BLOCK_SIZE" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="DIMENSION" type="Dimension" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="UNIT" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="JAIL_TIME_UNIT" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="STD_VELOCITY" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="SLOW_VELOCITY" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="GHOSTSCOLORS" type="Color[]" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="GOMESCOLORS" type="Color[]" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="SCALES" type="double[]" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="STATIC_WRAPAROUND" type="Point[]" visibility="public" isStatic="true"/>
+        <Field name="DYNAMIC_WRAPAROUND" type="Point[]" visibility="public" isStatic="true"/>
+        <Field name="PAC_START" type="Point" visibility="public" isStatic="true"/>
+        <Field name="GHOSTS_START" type="Point[]" visibility="public" isStatic="true"/>
+        <Field name="NUMBER_OF_GHOST" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="PAC_START_LIFE" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="xs" type="int[][]" visibility="public" isStatic="true"/>
+        <Field name="ys" type="int[][]" visibility="public" isStatic="true"/>
+        <Field name="vs" type="int[][]" visibility="public" isStatic="true"/>
+        <Field name="blocksMap" type="int[][]" visibility="public" isStatic="true"/>
+        <Field name="blocksMap0" type="int[][]" visibility="public" isStatic="true"/>
+        <Field name="blocksMaps" type="int[][][]" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="buildGomeMap" returnType="int[][]" visibility="public" isStatic="true">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="addSpecialGomes" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="index"/>
+          <Argument type="int[][]" name="map"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Gui">
+  <ClassDiagramComponents>
+    <Class name="Block" package="Gui" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="point" type="Point" visibility="protected"/>
+        <Field name="color" type="Color" visibility="protected"/>
+        <Field name="SIZE" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Point" name="p"/>
+          <Argument type="Color" name="c"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPoint" returnType="Point" visibility="public"/>
+        <Method name="getColor" returnType="Color" visibility="public"/>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="Color" name="c"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Drawer" package="Gui" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="s" type="int" visibility="private" isFinal="true"/>
+        <Field name="pacmanPoint" type="Point" visibility="private"/>
+        <Field name="ghostPoint" type="Point[]" visibility="private"/>
+        <Field name="pacColor" type="Color" visibility="private"/>
+        <Field name="pacmanDirection" type="Direction" visibility="private"/>
+        <Field name="blocks" type="int[][]" visibility="private"/>
+        <Field name="gomes" type="int[][]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int[][]" name="b"/>
+          <Argument type="int[][]" name="g"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="drawPacman" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="drawPacghost" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="drawMap" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="updateMaps" returnType="void" visibility="public">
+          <Argument type="int[][]" name="b"/>
+          <Argument type="int[][]" name="g"/>
+        </Method>
+        <Method name="getBlockSize" returnType="int" visibility="public"/>
+        <Method name="setPacmanFeatures" returnType="void" visibility="public">
+          <Argument type="PacMan" name="pac"/>
+        </Method>
+        <Method name="setPacghostPoint" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="Point" name="p"/>
+          <Argument type="Color" name="c"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Maze" package="Gui" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="frame" type="JFrame" visibility="private"/>
+        <Field name="label" type="JLabel" visibility="private"/>
+        <Field name="dimension" type="Dimension" visibility="private"/>
+        <Field name="drawer" type="Drawer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int[][]" name="b"/>
+          <Argument type="int[][]" name="g"/>
+          <Argument type="KeyListener" name="listener"/>
+          <Argument type="PacMan" name="pac"/>
+          <Argument type="PacGhost[]" name="ghosts"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setPacmanFeatures" returnType="void" visibility="public">
+          <Argument type="PacMan" name="pac"/>
+        </Method>
+        <Method name="show" returnType="void" visibility="public">
+          <Argument type="PacMan" name="pac"/>
+          <Argument type="int" name="sc"/>
+          <Argument type="int" name="life"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public"/>
+        <Method name="updateMaps" returnType="void" visibility="public">
+          <Argument type="int[][]" name="b"/>
+          <Argument type="int[][]" name="g"/>
+        </Method>
+        <Method name="setGhostsPoint" returnType="void" visibility="public">
+          <Argument type="PacGhost[]" name="ghosts"/>
+        </Method>
+        <Method name="sleep" returnType="void" visibility="public">
+          <Argument type="int" name="ms"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="Lines" package="Gui" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Literals>
+        <Literal name="HORIZONTAL"/>
+        <Literal name="VERTICAL"/>
+        <Literal name="TWO_HORIZONTAL"/>
+        <Literal name="TWO_VERTICAL"/>
+      </Literals>
+    </Enum>
+    <Class name="Shapes" package="Gui" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="line" type="Lines" visibility="private"/>
+        <Field name="nbMin" type="int" visibility="private"/>
+        <Field name="nbMax" type="int" visibility="private"/>
+        <Field name="xplus" type="int" visibility="private"/>
+        <Field name="yplus" type="int" visibility="private"/>
+        <Field name="inBetween" type="int" visibility="private"/>
+        <Field name="dilation" type="int" visibility="private"/>
+        <Field name="normalDilation" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Lines" name="l"/>
+          <Argument type="int" name="min"/>
+          <Argument type="int" name="max"/>
+          <Argument type="int" name="xp"/>
+          <Argument type="int" name="yp"/>
+          <Argument type="int" name="inb"/>
+          <Argument type="int" name="d"/>
+          <Argument type="boolean" name="nd"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Lines" name="l"/>
+          <Argument type="int" name="min"/>
+          <Argument type="int" name="max"/>
+          <Argument type="int" name="xp"/>
+          <Argument type="int" name="yp"/>
+          <Argument type="int" name="inb"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Lines" name="l"/>
+          <Argument type="int" name="min"/>
+          <Argument type="int" name="max"/>
+          <Argument type="int" name="xp"/>
+          <Argument type="int" name="yp"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Lines" name="l"/>
+          <Argument type="int" name="min"/>
+          <Argument type="int" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Lines" name="l"/>
+          <Argument type="int" name="xp"/>
+          <Argument type="int" name="yp"/>
+          <Argument type="int" name="inb"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLines" returnType="Lines" visibility="public"/>
+        <Method name="getNbMin" returnType="int" visibility="public"/>
+        <Method name="getNbMax" returnType="int" visibility="public"/>
+        <Method name="getInBetween" returnType="int" visibility="public"/>
+        <Method name="isNormalDilation" returnType="boolean" visibility="public"/>
+        <Method name="getXplus" returnType="int" visibility="public"/>
+        <Method name="getYplus" returnType="int" visibility="public"/>
+        <Method name="getDilation" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Structure" package="Gui" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="START" type="Point" visibility="private"/>
+        <Field name="VSTART" type="Point" visibility="private"/>
+        <Field name="design" type="List&lt;String&gt;" visibility="private"/>
+        <Field name="transformer" type="Transformers" visibility="private"/>
+        <Field name="customMap" type="List&lt;Mapper&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="List&lt;String&gt;" name="d"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="updateDesign" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="d"/>
+        </Method>
+        <Method name="drawDesigns" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="Point" name="start"/>
+          <Argument type="List&lt;Mapper&gt;" name="maps"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="drawLines" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="Shapes" name="sh"/>
+          <Argument type="Point" name="p"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="drawBlocks" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="Point" name="p"/>
+          <Argument type="int" name="w"/>
+          <Argument type="int" name="h"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="drawStrucure" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="drawMap" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="int" name="size"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Transformers" package="Gui" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="mapping" type="List&lt;Mapper&gt;" visibility="private"/>
+        <Field name="v1" type="List&lt;Mapper&gt;" visibility="private"/>
+        <Field name="v2" type="List&lt;Mapper&gt;" visibility="private"/>
+        <Field name="version" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="switchVersion" returnType="void" visibility="public"/>
+        <Method name="getMapping" returnType="List&lt;Mapper&gt;" visibility="public"/>
+        <Method name="getVersion" returnType="List&lt;Mapper&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Gui.Shapes" target="Gui.Lines" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="line" source="Gui.Shapes" target="Gui.Lines" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Gui.Structure" target="Gui.Shapes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="drawer" source="Gui.Maze" target="Gui.Drawer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="transformer" source="Gui.Structure" target="Gui.Transformers" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
