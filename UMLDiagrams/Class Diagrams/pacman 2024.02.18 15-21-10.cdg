@@ -11,7 +11,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="PacmanGame" package="pacman" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="PacmanGame" package="pacman" visibility="public" xPosition="320.0" yPosition="-8.0">
       <Fields>
         <Field name="score" type="int" visibility="package"/>
         <Field name="mapIndex" type="int" visibility="package"/>

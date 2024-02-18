@@ -2,23 +2,7 @@
 
 <ClassDiagram name="Utilities">
   <ClassDiagramComponents>
-    <Enum name="Direction" package="Utilities" visibility="public" xPosition="20.0" yPosition="20.0">
-      <Literals>
-        <Literal name="NONE"/>
-        <Literal name="UP"/>
-        <Literal name="DOWN"/>
-        <Literal name="LEFT"/>
-        <Literal name="RIGHT"/>
-      </Literals>
-    </Enum>
-    <Enum name="State" package="Utilities" visibility="public" xPosition="320.0" yPosition="20.0">
-      <Literals>
-        <Literal name="NORMAL"/>
-        <Literal name="SUPER"/>
-        <Literal name="INVISIBLE"/>
-      </Literals>
-    </Enum>
-    <Class name="Utils" package="Utilities" visibility="public" xPosition="620.0" yPosition="20.0">
+    <Class name="Utils" package="Utilities" visibility="public" xPosition="374.0" yPosition="20.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -45,6 +29,22 @@
         </Method>
       </Methods>
     </Class>
+    <Enum name="Direction" package="Utilities" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Literals>
+        <Literal name="NONE"/>
+        <Literal name="UP"/>
+        <Literal name="DOWN"/>
+        <Literal name="LEFT"/>
+        <Literal name="RIGHT"/>
+      </Literals>
+    </Enum>
+    <Enum name="State" package="Utilities" visibility="public" xPosition="196.0" yPosition="20.0">
+      <Literals>
+        <Literal name="NORMAL"/>
+        <Literal name="SUPER"/>
+        <Literal name="INVISIBLE"/>
+      </Literals>
+    </Enum>
   </ClassDiagramComponents>
   <ClassDiagramRelations/>
 </ClassDiagram>
