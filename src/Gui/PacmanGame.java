@@ -1,19 +1,10 @@
-package pacman;
+package Gui;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JOptionPane;
-
-import Constantes.Constante;
-import Gui.Maze;
-import PacObject.PacGhost;
-import PacObject.PacMan;
-import Utilities.State;
-import Utilities.Utils;
-
-
 public class PacmanGame {
 	int score;
 	int mapIndex;
@@ -41,6 +32,15 @@ public class PacmanGame {
 	}
 	
 	public void play() {
+            while (gameRunning) {
+            updateGameState();
+            renderGame();
+            try {
+                Thread.sleep(100); // Control game speed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 		while(!noMoreGomes() && !noMoreLife()) {
 			maze.setGhostsPoint(ghosts);
 			maze.updateMaps(Utils.clone2DMatrix(blocksMatrix), Utils.clone2DMatrix(gomesMatrix));
@@ -213,4 +213,43 @@ public class PacmanGame {
 	public void quit() {
 		maze.close();
 	}
+        private void initializeGame() {
+   pacman = new PacMan();
+        // Initialize ghosts - Assuming there's a fixed number of ghosts
+        ghosts = new PacGhost[Constante.NUMBER_OF_GHOST];
+
+}
+
+private void updateGameState() {
+    // Code to update the game state
+    pacman.move();
+        // Update each ghost's state
+        for (PacGhost ghost : ghosts) {
+            ghost.move();
+        }
+}
+
+private void renderGame() {
+    // Code to render game components
+    maze.repaint();
+}
+
+private void checkGameOver() {
+    // Code to check for game over conditions
+    while(!noMoreGomes() && !noMoreLife()) {
+			maze.setGhostsPoint(ghosts);
+			maze.updateMaps(Utils.clone2DMatrix(blocksMatrix), Utils.clone2DMatrix(gomesMatrix));
+			maze.show(pacman, score, pacman.getLife());
+			pacman.manage();
+			manageGhosts();
+			pacman.move(mapIndex);
+			updateAll();
+			moveGhosts();
+			updateAll();
+		}
+		if(noMoreGomes()) congrats("Congrats !!! You've won the game !!!!");
+		else congrats("You're a loserrrrr !");
+		ask2Play("");
+
+}
 }

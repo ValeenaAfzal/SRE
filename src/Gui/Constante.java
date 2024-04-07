@@ -1,9 +1,8 @@
-package Constantes;
+package Gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 
-import Utilities.Utils;
 
 public class Constante {
 	

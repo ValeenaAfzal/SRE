@@ -1,4 +1,4 @@
-package pacman;
+package Gui;
 
 
 public class App {

@@ -1,18 +1,11 @@
 package Gui;
-
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Polygon;
-
 import javax.swing.JPanel;
-
-import Constantes.Constante;
-import PacObject.PacMan;
-import Utilities.Direction;
-
 @SuppressWarnings("serial")
+
 public class Drawer extends JPanel{
 	private final int s = Constante.BLOCK_SIZE;
 	private Point pacmanPoint = new Point();
@@ -87,33 +80,6 @@ public class Drawer extends JPanel{
 		g.fillOval(ex, ey, pas, pas);
 	}
 	
-	public void drawMap(Graphics g, int size) {
-		double scale = 0.3;
-		for(int i = 0; i < blocks.length; i++) {
-			for(int j = 0; j < blocks[i].length; j++) {
-				//Blocks
-				if(blocks[i][j] == 1) {
-					g.setColor(Color.black);
-					g.fill3DRect(j*size, i*size, size, size, true);
-				}else if(blocks[i][j] == 3) {
-					g.setColor(Color.red);
-					g.drawLine(j*size, i*size, (j+1)*size, i*size);
-				}
-				//Pacgomes
-				int v = gomes[i][j];
-				if(v != 0) {
-					scale = Constante.SCALES[v-1];
-					g.setColor(Constante.GOMESCOLORS[v-1]);
-					g.fillOval((int) ((j+0.25)*size-scale), (int) ((i+0.25)*size-scale), (int) (size*scale), (int) (size*scale));
-				}
-			}
-		}
-	}
-	
-	public void updateMaps(int[][] b, int[][] g) {
-		blocks = b;
-		gomes = g;
-	}
 	
 
 	public int getBlockSize() {

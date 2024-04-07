@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Map">
+  <ClassDiagramComponents>
+    <Class name="Map" package="Gui" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="blocks" type="int[][]" visibility="private"/>
+        <Field name="gomes" type="int[][]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="drawMap" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="updateMaps" returnType="void" visibility="public">
+          <Argument type="int[][]" name="b"/>
+          <Argument type="int[][]" name="g"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

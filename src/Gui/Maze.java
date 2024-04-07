@@ -6,13 +6,6 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import Constantes.Constante;
-import PacObject.PacGhost;
-import PacObject.PacMan;
-import Utilities.Utils;
-
-
 public class Maze {
 	private JFrame frame = new JFrame();
 	private JLabel label;

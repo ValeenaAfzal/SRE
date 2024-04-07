@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PacmanGame">
+  <ClassDiagramComponents>
+    <Class name="PacmanGame" package="Gui" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="score" type="int" visibility="package"/>
+        <Field name="mapIndex" type="int" visibility="package"/>
+        <Field name="pacman" type="PacMan" visibility="private"/>
+        <Field name="ghosts" type="PacGhost[]" visibility="private"/>
+        <Field name="blocksMatrix" type="int[][]" visibility="private"/>
+        <Field name="gomesMatrix" type="int[][]" visibility="private"/>
+        <Field name="maze" type="Maze" visibility="package"/>
+        <Field name="listener" type="KeyListener" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="play" returnType="void" visibility="public"/>
+        <Method name="ask2Play" returnType="void" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="congrats" returnType="void" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="totalReset" returnType="void" visibility="public"/>
+        <Method name="partialReset" returnType="void" visibility="public"/>
+        <Method name="resetMaps" returnType="void" visibility="private"/>
+        <Method name="resetMaps" returnType="void" visibility="private">
+          <Argument type="int" name="cnt"/>
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="noMoreGomes" returnType="boolean" visibility="public"/>
+        <Method name="noMoreLife" returnType="boolean" visibility="public"/>
+        <Method name="updateGoneMatrix" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="updateAll" returnType="void" visibility="public"/>
+        <Method name="applyRules" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="computeScore" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="getGoneMatrixCell" returnType="int" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="setGoneMatrixCell" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="moveGhosts" returnType="void" visibility="public"/>
+        <Method name="slowdownGhosts" returnType="void" visibility="public"/>
+        <Method name="manageGhosts" returnType="void" visibility="public"/>
+        <Method name="sleep" returnType="void" visibility="public">
+          <Argument type="int" name="ms"/>
+        </Method>
+        <Method name="printScore" returnType="void" visibility="public"/>
+        <Method name="quit" returnType="void" visibility="public"/>
+        <Method name="initializeGame" returnType="void" visibility="private"/>
+        <Method name="updateGameState" returnType="void" visibility="private"/>
+        <Method name="renderGame" returnType="void" visibility="private"/>
+        <Method name="checkGameOver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

@@ -1,14 +1,11 @@
-package PacObject;
+package Gui;
 
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
-import Constantes.Constante;
-import Utilities.Direction;
-import Utilities.State;
-import Utilities.Utils;
+import Gui.Constante;
 
 
 public abstract class AbstractCharacter {

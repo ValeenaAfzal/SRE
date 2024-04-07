@@ -1,16 +1,14 @@
-package PacObject;
+package Gui;
 
+import Gui.AbstractCharacter;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.Random;
 
-import Constantes.Constante;
-import Utilities.Direction;
-import Utilities.State;
-import Utilities.Utils;
+import Gui.Constante;
 
 
-public class PacGhost extends AbstractCharacter{
+public class PacGhost extends NewClass{
 	int jailTime = 0;
 	
 	public PacGhost(Point p, Color bc){
@@ -58,24 +56,6 @@ public class PacGhost extends AbstractCharacter{
 		}
 	}
 
-	@Override
-	public void move(int index) {
-		int x = point.x;
-		int y = point.y;
-		
-		if(movement.getCurrent() == Direction.UP) y-=velocity;
-		else if(movement.getCurrent() == Direction.DOWN) y+=velocity;
-		else if(movement.getCurrent() == Direction.LEFT) x-=velocity;
-		else if(movement.getCurrent() == Direction.RIGHT) x+=velocity;
-		
-		if(collision(index, x, y)) {
-			movement.setCurrent(getRandomDirection());
-			move(index);
-			return;
-		}
-		point.x = x;
-		point.y = y;
-	}
 	
 	public void correctBadMove() {
 		if(getVelocity() == Constante.STD_VELOCITY) {

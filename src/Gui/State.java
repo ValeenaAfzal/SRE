@@ -1,4 +1,4 @@
-package Utilities;
+package Gui;
 
 public enum State {
 	NORMAL,

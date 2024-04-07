@@ -1,9 +1,9 @@
-package Utilities;
+package Gui;
 
 import java.awt.Dimension;
 import java.awt.Point;
 
-import Constantes.Constante;
+import Gui.Constante;
 
 public class Utils {
 	public static int[][] clone2DMatrix(int[][] mat){

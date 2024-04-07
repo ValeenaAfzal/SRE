@@ -5,8 +5,6 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
-
-import Constantes.Constante;
 import Gui.Transformers.Mapper;
 
 public class Structure {
@@ -67,9 +65,6 @@ public class Structure {
 	
 	
 	public void drawStrucure(Graphics g, int size) {
-		//g.setColor(Color.black);
-		//drawDesigns(g, START, customMap, size);
-		//drawDesigns(g, VSTART, transformer.getVersion(), size);
 		drawMap(g, size);
 	}
 	
@@ -85,13 +80,6 @@ public class Structure {
 					g.setColor(Color.red);
 					g.drawLine(j*size, i*size, (j+1)*size, i*size);
 				}
-				/*
-				//Pacgomes
-				if(Constante.gomeMap[i][j] == 1) {
-					g.setColor(Color.blue);
-					g.fillOval((int) ((j+0.5)*size-scale), (int) ((i+0.5)*size-scale), (int) (size*scale), (int) (size*scale));
-				}
-				*/
 			}
 		}
 	}

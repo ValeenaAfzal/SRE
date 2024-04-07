@@ -1,12 +1,12 @@
-package Utilities;
+package Gui;
 
 public enum Direction {
 	
 	NONE(0,0),
-	UP(0, -Constantes.Constante.BLOCK_SIZE),
-	DOWN(0, Constantes.Constante.BLOCK_SIZE),
-	LEFT(-Constantes.Constante.BLOCK_SIZE, 0),
-	RIGHT(Constantes.Constante.BLOCK_SIZE, 0);
+	UP(0, -Gui.Constante.BLOCK_SIZE),
+	DOWN(0, Gui.Constante.BLOCK_SIZE),
+	LEFT(-Gui.Constante.BLOCK_SIZE, 0),
+	RIGHT(Gui.Constante.BLOCK_SIZE, 0);
 
 	
 	private int x;

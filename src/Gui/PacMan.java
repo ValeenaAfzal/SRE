@@ -1,13 +1,11 @@
-package PacObject;
+package Gui;
 
+import Gui.AbstractCharacter;
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 
-import Constantes.Constante;
-import Utilities.Direction;
-import Utilities.State;
-import Utilities.Utils;
+import Gui.Constante;
 
 public class PacMan extends AbstractCharacter{
 	private int life;
