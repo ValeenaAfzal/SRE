@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 
 import Gui.Constante;
 
-public class PacMan extends AbstractCharacter{
+public class PacMan extends MainCharacters{
 	private int life;
 	boolean bonus;
 
